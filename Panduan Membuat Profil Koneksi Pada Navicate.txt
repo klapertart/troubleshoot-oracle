@@ -1,0 +1,27 @@
+Membuat Koneksi Oracle untuk PBB
+
+1. Buka Navicate
+
+2. Klik menu File > New Connection > Oracle
+
+3. Akan muncul dialog box konfigurasi koneksi baru
+
+4. Pada field Connection Name tulis PBB (atau bebas, bisa apa saja)
+
+5. Pada field Connection Type, pilih 'Basic'
+
+6. Pada field Host Name/IP Address, isi dengan IP Addres server oracle
+
+7. Field Port biarkan saja, isi default 1521
+
+8. Untuk field Service Name/SID, isi dengan sismiop, dan pilih option Service Name
+
+9. User Name: PBB
+
+10. Password: PBB
+
+11. Setelah diisi semua, klik tombol 'Test Connection' jika hasilnya 'Success' berarti sudah selesai.
+
+12. Klik tombol OK
+
+------------------------ Selesai -----------------------------
