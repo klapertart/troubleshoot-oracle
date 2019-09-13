@@ -1,0 +1,13 @@
+STEP BY STEP Export Database Oracle
+
+1. Masuk ke Centos, buka terminal, masuk sebagai user oracle, ketikan perintah berikut>> su - oracle
+   Jika meminta password, ketikan passwordnya. (karakter yg diketik tidak akan terlihat), jika sudah masukan password tekan enter.
+
+2. Jika user oracle sudah masuk, ketikan script export berikut:
+   a). Jika oracle 11g >> expdp pbb/pbb@sismiop dumpfile=DBOganilir_10032016.DMP logfile=DBOganilir_10032016.DMP [enter]
+       file hasil backup akan ada di folder /u01/oracle/app/admin/sismiop/dpdump/, atau di folder /home/oracle/app/admin/sismiop/dpdump/
+
+   b). Jika oracle 10g >> exp pbb/pbb@sismiop file=/home/DBOganilir_10032016.DMP log=/home/DBOganilir_10032016.DMP full=y triggers=yes [enter]
+       file hasil backup akan ada di folder /home/
+
+3. Selesai

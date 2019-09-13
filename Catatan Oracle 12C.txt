@@ -1,0 +1,73 @@
++ Two types of database in Oracle 12c
+	- CDB, Container Database
+	- PDB, Pluggable Database
+	
+	* PDB in CDB
+
++ User
+	- For CDB called Common Users
+		- if we create user, use C##, for example:
+		
+		  SQL > create user C##PBB identified by PBB;
+		  
+	- For PDB called Local Users
+		- if we create user, theres step have to do :
+		
+		  SQL > create user fred identified by flintstone container=current;
+
++ The solution to the ORA-06596 
+	- is to set a hidden parameter "_oracle_script".  
+	  When you set the undocumented (hidden) parameter "_oracle_script"=true  
+	  you can create the fred user without a C## in from of the user ID.  
+	  However, this user will not used useful in a pluggable/container database:
+
+	  SQL > connect system/manager as sysdba
+	  SQL > alter session set "_ORACLE_SCRIPT"=true;
+	  SQL > create user fred identified by flintstone;
+	  SQL > grant dba to pubs; 
+
++ The solution to ORA-28040: No matching authentication protocol exception
+	- Set SQLNET.ALLOWED_LOGON_VERSION=8 in the oracle/network/admin/sqlnet.ora file
+	- ALTER SYSTEM SET SEC_CASE_SENSITIVE_LOGON = FALSE 
+	- ALTER USER [XXX] IDENTIFIED BY [PWD]
+	
++ The solution to The selected Oracle database is not configured to use the AL32UTF8 character set :
+	- Open SQLplus and login using a sysdba role.
+	- One by one, execute the next statements.
+	
+	  SQL> shutdown immediate;
+	  SQL> startup restrict;
+	  SQL> alter database character set internal_use AL32UTF8;
+	  SQL> alter database character set AL32UTF8;
+	  SQL> shutdown immediate;
+	  SQL> startup;
+	  
+	- Exit SQLPlus
+
++ Change container / change to pdb 
+	- SQL> alter session set container = [cdb / pdb name];
+
++ Check current container
+	- SQL> show con_name;
+
++ The solution to create user db/shcemas in pdb
+	// login into cdb (or system)
+	- $> sqlplus / as sysdba
+	// connect to pdb
+	- SQL> alter session set container = sismioppdb;
+	// create user
+	- SQL> create user pbb identified by pbb;
+
++ The solution to ora-39087 directory data_pump_dir is invalid.
+	- SQL> create directory data_pump_dir as '[path]'
+	- SQL> grant read, write on directory data_pump_dir to [user]
+	
++ The solution to ORA-01109: database not open
+	- SQL> alter database open
+
++ Data Pump Dump Location
+	- SQL> select * from dba_directories where directory_name='DATA_PUMP_DIR';  
+
++ Check Current connection
+	- SQL> show con_name;
+

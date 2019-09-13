@@ -1,0 +1,23 @@
+Koneksi Client ke Server Lambat
+
+1. Restart listener:
+
+$> lsnrctl stop
+$> lsnrctl start
+
+*pakai user oracle
+
+
+2. Cek file log, untuk mengetahui letak file log ketikan:
+
+$> lsnrctl stat
+
+Jika, kapasitas file lebih dari 1Gb, maka rename file log tersebut, nanti file log baru akan terbuatkan
+
+
+
+3. Cek koneksi ke printer.
+
+Tandanya lambat ketika cetak report.
+integration error: SSL failure running another product
+

@@ -1,0 +1,56 @@
+STEP BY STEP Import Database Oracle
+
+
+Catatan:
+Database dalam bentuk file DMP sudah tersimpan di folder >> /home/oracle/app/admin/sismiop/dpdump,
+dengan hak akses penuh terhadap file tersebut.
+
+
+---------------- Script untuk memberikan hak akses penuh:------------------------------
+
+1. Masuk ke server (centos), buka Terminal, login dengan user: root, password: getpass
+
+2. ketikan >> chmod 777 [path]/[file dmp]
+
+contoh: chmod 777 /home/oracle/app/admin/sismiop/dpdump/PBB.dmp [enter]
+
+
+
+---------------- Import database --------------------------
+Catatan: Sudah ada database, user, dan password (untuk akses ke database tersebut)
+
+1. Masuk ke server (centos), buka Terminal, login dengan user: root, password: getpass
+
+2. Jika user pbb/pbb belum dibuat, maka buatkan terlebih dahulu, berikut tahapannya:
+
+*masuk ke terminal dan login dengan user: oracle, password: oracle (atau sesuaikan)*
+
+a). masuk ke sqlplus pakai user sys, ketikan >> sqlplus sys/rahasia@sismiop as sysdba
+b). ketika sudah masuk sqlplus, ketikan >> create user pbb identified by pbb;
+c). setelah itu ketikan >> grant dba to pbb;
+d). pembuatan user pbb selesai, sekarang keluar dari sqlplus dengan mengetikan 'exit'
+
+3. Import database, login dengan user: root, password: rahasia (atau sesuaikan), ketikan script berikut:
+
+>> Untuk oracle 11g 
+
+$ impdp [username]/[password]@[service] dumpfile=[databasename].dmp logfile=[logname].txt [enter]
+contoh: IMPDP pbb/pbb@sismiop DUMPFILE=PBB.dmp LOGFILE=PBB.txt [enter]
+
+Jika import dari schema/user satu ke schema/user yang lain
+$ impdp [user2]/[password]@[service] schemas=user1 remap_schema=user1:user2 dumpfile=[databasename].dmp logfile=[logname].txt [enter]
+
+contoh: IMPDP pbb/pbb@sismiop schemas=pbb2 remap_schema=pbb2:pbb DUMPFILE=PBB.dmp LOGFILE=PBB.txt [enter]
+
+
+Untuk Oracle 10g >> IMP [username]/[password]@[service] FILE=[databasename].dmp LOG=[logname].txt [enter]
+
+contoh: IMP pbb/pbb@sismiop FILE=/home/oracle/app/admin/sismiop/dpdump/PBB.dmp LOG=/home/oracle/app/admin/sismiop/dpdump/PBB.txt FROMUSER=[pbb] TOUSER=[pbb] [enter]
+
+
+---------------- Selesai -------------------------------
+
+
+
+
+ 

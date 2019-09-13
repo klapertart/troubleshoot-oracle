@@ -1,0 +1,28 @@
+------Panduan Compile Form
+
+*catatan: jangan membuka form yang akan dicompile pada aplikasi*
+
+1. Buka Form Builder
+2. Buka form yang akan di compile: File > Open (buka form dengan ekstensi 'fmb')
+3. Lakukan koneksi: File > Connect  (isi user, password, database)
+4. Compile Function: Program > Compile > All
+5. Compile File: File > Administration > Compile File
+6. Selesai
+
+-----Panduan Compile Report
+
+1. Buka Report Builder
+2. Buka report yang akan di compile: File > Open (buka form dengan ekstensi 'rdf')
+3. Lakukan koneksi: File > Connect  (isi user, password, database)
+4. Compile Function: Program > Compile > All
+5. Compile File: File > Administration > Compile Report
+6. Compile File: File > Administration > Convert
+7. Pada tab 'Conversion', di field 'Source' klik tombol 'Browse', cari dan pilih report yang akan dicompile (ekstensi: rdf),
+   di field 'Destination' klik tombol 'Browse', cari dan pilih report yang akan dicompile (ekstensi: rep)
+8. Pada tab 'Options' > 'Destination Unit' pilih Character.
+9. Pilih tombol OK
+10. Selesai.
+
+   
+
+ 

@@ -1,0 +1,15 @@
+Langkah Migrasi Database Baru.
+
+1. Login ke slqplus >> sqplus sys/sismiop  | sqlplus sys/rahasia@sismiop as sysdba
+2. Buat user pbb/pbb >> create user pbb identified by pbb;
+3. Beri grant dba >> grant dba to pbb;
+4. Keluar dari sqlplus
+5. Login ke sqlplus dengan user pbb >> sqlplus pbb/pbb@sismiop
+6. Buat user u060000000 >> create user u060000000 identified by sismiop;
+7. Beri grant dba >> grant dba to u060000000
+8. Buar role aktif >> create role pemakai_aktif;
+9. Buar role pasif >> create role pemakai_pasif;
+10.Beri grant pemakai aktif >> grant pemakai_aktif to u060000000
+11. Import database.
+12. Generate file semua.txt (cek isi file, jika ada path yang salah atau folder yang tidak ada, tinggal sesuaikan)
+	script >> @[path]/semua.txt  [enter]

@@ -1,0 +1,13 @@
+One of the requirements for samePage is that the character set should be UTF-8. 
+
+You can either check with your DBA or run the following SQL to determine whether your database character set is UTF-8. 
+
+ $> SELECT value$ FROM sys.props$ WHERE name = 'NLS_CHARACTERSET' ;
+
+It should return the value AL32UTF8. 
+
+Another option is to run the following SQL :
+
+ $> SELECT * FROM NLS_DATABASE_PARAMETERS
+
+The value against NLS_CHARACTERSET should be UTF8.

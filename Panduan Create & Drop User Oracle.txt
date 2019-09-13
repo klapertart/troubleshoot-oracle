@@ -1,0 +1,32 @@
+Panduan Create & Drop User Oracle
+
+
+*Sebelum import database pastikan drop & create user PBB
+
+
+---------------------- DROP USER PBB ---------------------
+
+1. Masuk oracle, buka terminal
+
+2. Masuk ke SQLPlus, scriptnya >> sqlplus system/sismiop  [enter]
+
+3. Setelah masuk SQLPlus, Drop user PBB, scriptnya >> drop user PBB cascade;  [enter]
+
+
+*setelah menghapus (drop) user PBB sebelumnya, sekarang buat user PBB baru
+
+
+--------------------- CREATE USER PBB ---------------------
+
+*melanjutkan proses di atas, masih dalam SQLPlus
+
+
+1. Membuat user PBB, scriptnya >> create user PBB identified by PBB;  [enter]
+
+*diatas membuat user PBBB dengan password PBB
+
+2. Memberikan grant ke user PBB, scriptnya >> grant dba to PBB; [enter]
+
+
+--------------------------- SELESAI ------------------------
+

@@ -1,0 +1,9 @@
+Ketika terjadi error, tekan tombol berikut:
+
+Di Oracle 10 > Shift+Ctrl+E
+
+Di Oracle 11 > Shift+F1
+
+
+Atau bisa menambahkan di tag EXCEPTION, script berikut:
+message(SQLCODE||' -ERROR- '||SQLERRM);

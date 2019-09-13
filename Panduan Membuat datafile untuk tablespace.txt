@@ -1,0 +1,19 @@
+Increase the size of the tablespace by adding datafiles to it or increase the existing datafile size of the issue tablespace.
+
+
+eg:
+ALTER DATABASE DATAFILE ‘<filename with full path here>’ RESIZE <filesizehere>M;
+[OR]
+ALTER TABLESPACE <tablespace name here> ADD DATAFILE '<filename with full path here>' SIZE <filesizehere>M;
+
+
+
+catatan:
+
+db_block_size | Datafile upper limit
+----------------------------------------------
+2kb               8GB
+4kb              16GB
+8kb              32GB
+16kb             64GB
+32kb             128GB

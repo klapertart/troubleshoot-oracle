@@ -1,0 +1,6 @@
+Alamat TNSNAMES.ORA dan LISTENER.ORA pada Centos
+
+/home/oracle/app/product/11.2.0/dbhome_1/network/admin
+
+
+Catatan: Kadang setiap server berbeda seus

@@ -1,0 +1,35 @@
+CREATE OR REPLACE 
+PROCEDURE "TES" AS
+
+ CURSOR cTables IS
+    SELECT * 
+      FROM ALL_TABLES TAB
+    WHERE TAB.OWNER = 'PBB'; /* Tune the where clause to your needs */
+
+
+	sSql VARCHAR2(20000);
+	isExist NUMBER;
+
+BEGIN
+
+	--DBMS_OUTPUT.ENABLE(NULL);  
+	FOR rTable in cTables LOOP
+
+    --sSql := 'CREATE PUBLIC SYNONYM ' || rTable.TABLE_NAME || ' FOR PBB.' || rTable.TABLE_NAME || ';';		
+    --DBMS_OUTPUT.PUT_LINE(sSql);
+		
+
+		BEGIN
+			SELECT 1 into isExist 
+			FROM all_synonyms
+			WHERE 
+			TABLE_OWNER = 'PBB' and SYNONYM_NAME = rTable.TABLE_NAME;
+
+	  EXCEPTION WHEN NO_DATA_FOUND THEN
+			sSql := 'CREATE PUBLIC SYNONYM ' || rTable.TABLE_NAME || ' FOR PBB.' || rTable.TABLE_NAME;
+			EXECUTE IMMEDIATE sSql;
+		END;
+
+  END LOOP;
+
+END;

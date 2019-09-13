@@ -1,0 +1,4 @@
+EXP/IMP
+
+1. Export, contoh : exp pbb/pbb@sismiop file=/home/mytable.dmp tables=mytable1, mytable2,...  
+2. Import, contoh : imp pbb/pbb@sismiop file=/home/mytable.dmp fromuser=user1 touser=user2

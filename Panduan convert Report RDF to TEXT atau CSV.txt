@@ -1,0 +1,6 @@
+Tahapan convert report to txt
+
+1. Pada report yang terbukan, klik pada menu File > Generate to File > Delimited.
+2. Pada option Delimiter pilih > ;  (titik koma).
+3. Simpan file di tempat yang dinginkan.
+

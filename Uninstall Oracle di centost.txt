@@ -1,0 +1,13 @@
+
+>> The deinstallation tool is also available as a separate command (deinstall) in Oracle home directories after installation. 
+   It is located in the $ORACLE_HOME/deinstall directory.
+
+>> Script uninstall :
+
+1. Tanpa respon file uninstall
+
+$ ./deinstall
+
+2. Membuat respon file uninstall
+
+$ ./deinstall -paramfile /home/usr/oracle/my_db_paramfile.tmpl

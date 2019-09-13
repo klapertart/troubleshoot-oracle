@@ -1,0 +1,15 @@
+>> Mengedit profil ORACEL pada Centos:
+vi /home/oracle/.bash_profile
+
+Catatan: Setelah mengedit, lakukan restart service oracle
+
+>> Merestart service Oracle:
+/etc/init.d/oracle restart
+
+>> Menghidupkan service Oracle:
+/etc/init.d/oracle start
+
+>> Menghentikan service Oracle:
+/etc/init.d/oracle stop
+
+
