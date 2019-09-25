@@ -1,0 +1,13 @@
++ User Oracle privege 
+
++ Oracle Profile
+	- path : /home/oracle
+	- file .bash_profile
+
++ Start/Stop Service Oracle
++ Oracle version
++ SQLPlus admin & common user
++ Tnsnames.ora & Tes ping sid
++ listener.ora & start, stop, dan status listener
++ Export/import database & lokasi data_pump_dir
+

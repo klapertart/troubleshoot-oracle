@@ -1,0 +1,2 @@
+1. Masuk ke sqlplus
+2. Lakukan query berikut : select * from v$version.
