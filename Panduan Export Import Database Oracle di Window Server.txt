@@ -1,5 +1,6 @@
 Buka command prompt, langsung eksekusi script berikut:
 
+>> Oracle 10g
 
 Contoh Export: 
 
