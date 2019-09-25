@@ -41,9 +41,18 @@
 + Export/import database & lokasi data_pump_dir
 	- user pakai oracle
 	+ EXPORT Oracle 11g
-		- expdp trainee/trainee@sismiop dumpfile=
-
+		- expdp <nama user/schema>/<password user/schema>@sid dumpfile=<namafile>.dmp logfile=<namafilelog>.log
+		
+		contoh:
+		
+		- expdp trainee/trainee@sismip dumpfile=trainee.dmp logfile=trainee.log
 	
+	+ EMPORT Oracle 11g
+		- impdp <nama user dest/schema_dest>/<password user/schema_dest>@sid schemas=<schema_asal> remap_schema=<schema_asal>:<schema_dest>  dumpfile=<namafile>.dmp logfile=<namafilelog>.log
+		
+		contoh :
+		
+		- impdp traino/traino@sismiop schemas=trainee remap_schema=trainee:traino dumpfile=trainee.dmp logfile=imptrainee.log
 	
 	*Catatan
 	1. Mengetahui path data_dump_dir / path file dmp (ekstensi database file oracle)
