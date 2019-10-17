@@ -1,3 +1,27 @@
++ RESIZE
+
+ALTER DATABASE 
+DATAFILE 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TS_DATA.DBF' 
+RESIZE 3000M;
+
++ ADD
+
+ALTER TABLESPACE ts_data 
+ADD DATAFILE 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TS_DATA2.DBF' 
+SIZE 1000M;
+
+
++ SET AUTOEXTEND
+
+ALTER DATABASE 
+DATAFILE 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TS_DATA2.DBF'
+AUTOEXTEND ON
+MAXSIZE UNLIMITED; -- Or some reasonable cap
+
+
+
+##############################################################################################################################
+
 Increase the size of the tablespace by adding datafiles to it or increase the existing datafile size of the issue tablespace.
 
 
