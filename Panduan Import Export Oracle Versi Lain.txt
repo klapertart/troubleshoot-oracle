@@ -1,0 +1,24 @@
+C:\inetpub\wwwroot\PaymentMonitoring\App_Data
+
+MJ1T0726399
+MJ2J3850149
+
+
+exp iprotaxdba/dba@//localhost:1521/iprotax owner=iprotaxref file=iprotaxref_exp_31102013.dmp
+exp iprotaxdba/dba@//localhost:1521/iprotax owner=iprotaxpbb file=iprotaxpbb-nopartition_exp_31102013.dmp
+exp iprotaxdba/dba@//localhost:1521/iprotax owner=iprotaxbphtb file=iprotaxbphtb_exp_31102013.dmp
+
+
+expdp iprotaxdba/dba@//localhost:1521/iprotax schemas=iprotaxref dumpfile=iprotaxref_expdp_31102013.dmp
+expdp iprotaxdba/dba@//localhost:1521/iprotax schemas=iprotaxpbb dumpfile=iprotaxpbb-nopartition_expdp_31102013.dmp
+expdp iprotaxdba/dba@//localhost:1521/iprotax schemas=iprotaxbphtb dumpfile=iprotaxbphtb_expdp_31102013.dmp
+
+### error export excel ###
+Expot data gagal dilakukan.
+Access to the path 'C:\inetpub\wwwroot\PaymentMonitoring\Assets\UploadedFile\PENERIMAAN_WILAYAH_KECAMATAN_29-OKT-2013.xls' is denied
+
+
+## import ###
+
+imp iprotaxdba/dba@//localhost:1521/iprotaxbth fromuser=iprotaxref touser=iprotaxref file=D:\app\Administrator\admin\IPROTAXBTH\dpdump\iprotaxref_exp_31102013.dmp ignore=y buffer=999999999
+imp iprotaxdba/dba@//localhost:1521/iprotaxbth fromuser=iprotaxpbb touser=iprotaxpbb file=D:\app\Administrator\admin\IPROTAXBTH\dpdump\iprotaxpbb-nopartition_exp_31102013.dmp ignore=y buffer=999999999

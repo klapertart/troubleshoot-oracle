@@ -1,0 +1,12 @@
+1. Buka koneksi database via Navicate, klik menu Others >> Trigger
+2. Select All (tekan tombol Ctrl + A)
+3. Klik kanan pilin menu Maintain >> Compile  *jika ada mesaage warning/error klik tombol OK*
+
+Setelah proses compile selesai, lanjutkan dengan mengaktifkan Trigger
+
+1. Select All (tekan tombol Ctrl + A)
+2. Klik kanan pilin menu Maintain >> Enable
+
+
+*Catatan Penting
+Trigger-trigger yang statusnya 'invalid' jangan di 'enable'-kan, biarkan 'disable'

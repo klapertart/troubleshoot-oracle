@@ -1,0 +1,41 @@
+1. Jika membuat tabel tanpa tanda petik.
+
+	CREATE TABLE sample_table( 
+		col1 number,
+		col2 number
+	)
+
+	Tabel bisa diakses dengan :
+
+		SELECT * FROM sample_table
+		SELECT * FROM SAMPLE_TABLE
+		SELECT * FROM Sample_Table
+		SELECT * FROM "SAMPLE_TABLE"
+
+	Tetapi jika mengaksesnya seperti ini :
+
+	 SELECT * FROM "sample_table"
+
+	Kemungkinan akan gagal.
+
+
+2. Jika membuat tabel menggunakan tanda petik.
+
+	CREATE TABLE "sample_table"( 
+		col1 number,
+		col2 number
+	)
+
+	Tabel tidak bisa diakses dengan :
+
+		SELECT * FROM sample_table
+		SELECT * FROM SAMPLE_TABLE
+		SELECT * FROM Sample_Table
+		SELECT * FROM "SAMPLE_TABLE"
+
+	Tetapi jika mengaksesnya seperti ini :
+
+		SELECT * FROM "sample_table"
+
+	Akan sukses.
+

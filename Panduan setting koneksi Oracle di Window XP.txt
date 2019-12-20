@@ -1,0 +1,11 @@
+Panduan setting koneksi Oracle di Window XP
+
+1. Buka file 'TNSNAMES.ORA' - PATH-nya di C:\orant\NET80\ADMIN\
+2. Buat jika kosong, edit jika ada (script berikut
+
+
+SISMIOP =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.26.104)(PORT = 1521))
+    (CONNECT_DATA = (SID = sismiop))
+  )

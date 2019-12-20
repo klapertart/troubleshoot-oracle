@@ -1,0 +1,2 @@
+Data Pump Dump Location
+	- SQL> select * from dba_directories where directory_name='DATA_PUMP_DIR'; 

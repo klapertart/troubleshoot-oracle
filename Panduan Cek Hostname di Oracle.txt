@@ -1,0 +1,4 @@
+1. Masuk ke SQLPlus
+2. Ketikan query berikut: select * from v$instance.
+
+*Pastikan host-name di oracle sama dg di linux/host komputer.

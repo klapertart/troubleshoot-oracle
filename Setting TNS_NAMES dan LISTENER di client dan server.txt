@@ -1,0 +1,45 @@
+------- OS WINDOW -------
+
+>> Oracle Client
+
+1. Di folder C:\orant\
+2. Setting file tnsnames.ora di folder c:\orant\NET80\ADMIN\
+
+contoh:
+
+SISMIOP =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.26.105)(PORT = 1521))
+    (CONNECT_DATA = (SID = sismiop))
+  )
+
+
+
+>> Oracle Server
+
+1. Di folder C:\oracle\
+2. Setting file tnsnames.ora dan listener.ora di folder C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN\
+
+contoh tnsnames.ora
+
+SISMIOP =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.26.106)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = sismiop)
+    )
+  )
+
+
+contoh listener.ora
+
+LISTENER =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.26.106)(PORT = 1521))
+)
+
+
+**catatan:
+1. sqlplus pada 

@@ -1,0 +1,24 @@
+STEP BY STEP Backup Database Oracle
+
+1. Masuk ke Oracle dengan memakai user oracle
+
+2. Buka Terminal
+
+3. ketik script berikut:
+
+$> EXPDP [username]/[password]@[service] DUMPFILE=[databasename].dmp LOGFILE=[logname].txt
+
+contoh:
+
+$> EXPDP pbb/pbb@sismiop DUMPFILE=dbSismiop.dmp LOGFILE=logDBSismiop.txt
+
+
+
+4. File backup database akan tersimpan di folder: /home/oracle/app/admin/sismiop/dpdump
+
+
+
+
+
+IMPDP PBB/PBB@SISMIOP DUMPFILE=DBSISMIOP.DMP LOGFILE=LOGDBSISMIOP.TXT
+ 

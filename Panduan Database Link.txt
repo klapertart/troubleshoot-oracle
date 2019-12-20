@@ -1,0 +1,23 @@
+NETWORK_LINK ini berfungsi sebagai penghubung client ke database server.
+
+Buka SQLPLUS, ketikan >> CREATE DATABASE LINK [remote links name] CONNECT TO [target db user] IDENTIFIED BY [target db password] USING '[hostname:port/service_name]'
+
+Contoh:
+
+CREATE DATABASE LINK dbserverlink CONNECT TO PBB IDENTIFIED BY PBB USING '192.168.10.11:1521/sismiop';     [enter]
+
+
+NB:
+Untuk mengetes apakah network_link sudah bisa atau tidak,
+ketikan >> SELECT * FROM [tables name]@[network_link]
+
+Contoh: 
+
+SELECT * FROM SPPT@dbserverlink   [enter]
+
+
+
+
+>> Menghapus database link
+
+SQL> drop database link [link_name]

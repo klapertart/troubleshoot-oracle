@@ -1,0 +1,65 @@
+[STEP BY STEP] Cek Koneksi klien SISMIOP ke server oracle
+
+
+-----------------------Konfigurasi di sisi Oracle Client---------------------------
+
+
+1). Buka jendela "Oracle Net8 Easy Config"
+
+Klik >> All Program > Oracle for Windows NT > Oracle Net8 Easy Config
+
+
+2). Pilih option "Add New Service", kemudian di textfield sebelah kanan isikan nama servicenya (bebas, contohnya: ORCSISMIOP), 
+kemudian klik "Next".
+
+PERHATIAN: 
+a. Nama service tidak boleh sama dengan yang sudah ada.
+b. Nama service yang sudah ada, ada di kolom "Existing Services"
+
+
+3). Pilih "TCP/IP (Internet Protocol), kemudian klik "Next".
+
+
+4). Isi textfield "Host Name" dengan IP Server Oracle yang dipakai, dan untuk "Port Number" gunakan port default >> 1521,
+kemudian klik "Next".
+
+
+5). Isi textfield "Database SID", biasanya nama SID yang dipakai >> SISMIOP, kemudian klik "Next".
+
+
+6). Klik tombol "Test Service", isikan username & password (biasanya pakai user: PBB dan password: PBB),
+kemudian klik tombol "test", jika hasilnya "The connection was successful", klik tombol "Done", kemudian klik tombol "Next",
+kemudian klik tombol "Finihs"
+
+
+
+
+-----------------------Konfigurasi di sisi Aplikasi SISMIOP---------------------------
+
+1). Buka desktop window server (di virtualbox), klik kanan icon aplikasi SISMIOP, pilih "Properties"
+
+2). Pilih tab "Shortcut", di textfield "Target" akan ada script kurang lebih seperti berikut:
+
+Contoh >> "C:\orant\BIN\ifrun60.EXE f_main.fmx pbb/pbb@SISMIOP"
+
+Di ujung script ada >> pbb/pbb@SISMIOP
+
+itu merupakan >> [username]/[password]@[service name]
+
+Untuk [service name] isi dengan nama service yang telah dibuat sebelumnya di tahap "Konfigurasi di sisi Oracle Client"
+
+Untuk [username] dan [password] disesuaikan dengan yang biasa dipakai (biasanya, user: pbb & password: pbb)
+
+
+3). Klik tombol "Apply"
+
+
+
+--------------------------------Konfigurasi Selesai----------------------------------
+
+
+
+
+
+
+

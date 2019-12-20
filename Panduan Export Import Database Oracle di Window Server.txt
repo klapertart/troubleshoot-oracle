@@ -1,0 +1,11 @@
+Buka command prompt, langsung eksekusi script berikut:
+
+>> Oracle 10g
+
+Contoh Export: 
+
+exp pbb/pbb@sismiop2 file=D:\dbKatingan12222014.DMP log=D:\dbKatingan12222014.TXT full=y triggers=yes
+
+Contoh Import: 
+
+imp pbb/pbb@sismiop2 file=D:\dbKatingan12222014.DMP log=D:\dbKatingan12222014.TXT fromuser=pbb touser=pbb full=y triggers=yes

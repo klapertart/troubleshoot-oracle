@@ -1,0 +1,58 @@
++ User Oracle privege 
+
++ Oracle Profile
+	- path : /home/oracle
+	- file .bash_profile
+
+
++ Start/Stop Service Oracle
+	* oracle 11g & 10g
+	
+	- user root
+	- /etc/init.d
+	- filenya : oracle
+	- perintahnya >> service oracle start/stop/status 
+	
+
++ Oracle version
+	- user oracle
+	- masuk sqlplus
+	- perintahnya >> select * from v$version
+
++ SQLPlus admin & common user
+	- user oracle
+	
+
++ Tnsnames.ora & Tes ping sid
+	- path file >> $ORACLE_HOME/network/admin
+	- Jika ada perubahan restart oracle
+	- Untuk mengecek koneksi database, ketikan perintah >> tnsping <sid> / tnsping sismiop
+
++ Host name
+	- harus sama dengan nama host pc/server
+	- path hosts centos >> /etc/hosts
+	- orace >> sqlplus >> select * from v$instance
+
++ listener.ora & start, stop, dan status listener
+	- path file >> $ORACLE_HOME/network/admin
+	- menghandle request dari client untuk bisa koneksi ke database oracle
+	- perintahnya : lsnrctl start/stop/status *harus pakai user oracle
+	
++ Export/import database & lokasi data_pump_dir
+	- user pakai oracle
+	+ EXPORT Oracle 11g
+		- expdp <nama user/schema>/<password user/schema>@sid dumpfile=<namafile>.dmp logfile=<namafilelog>.log
+		
+		contoh:
+		
+		- expdp trainee/trainee@sismip dumpfile=trainee.dmp logfile=trainee.log
+	
+	+ EMPORT Oracle 11g
+		- impdp <nama user dest/schema_dest>/<password user/schema_dest>@sid schemas=<schema_asal> remap_schema=<schema_asal>:<schema_dest>  dumpfile=<namafile>.dmp logfile=<namafilelog>.log
+		
+		contoh :
+		
+		- impdp traino/traino@sismiop schemas=trainee remap_schema=trainee:traino dumpfile=trainee.dmp logfile=imptrainee.log
+	
+	*Catatan
+	1. Mengetahui path data_dump_dir / path file dmp (ekstensi database file oracle)

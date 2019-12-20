@@ -1,0 +1,24 @@
+--------Update schema
+
+1. Get Id of a schema's name
+
+SQL> select user#,NAME from SYS.user$ WHERE NAME='TEST';
+USER# NAME
+---------- ------------------------------
+*93* TEST
+2. modify the schema's name
+
+SQL> UPDATE USER$ SET NAME='NEW_SCHEMA_NAME' WHERE USER#=93;
+3. finished commit
+
+SQL> COMMIT;
+4. modify the system SCN
+
+SQL> ALTER SYSTEM CHECKPOINT;
+5.Then refresh shared_pool
+
+SQL> ALTER SYSTEM FLUSH SHARED_POOL;
+6. Modify the new schema's password
+
+SQL> ALTER USER new_schema  IDENTIFIED BY new_pass;
+

@@ -1,0 +1,15 @@
+
++ TNSNAMES.ora adalah file konfigurasi koneksi database.
+
++ LISTENER.ora ada file konfigurasi listener database, menghandle request koneksi database dari luar.
+
+
++ Alamat TNSNAMES.ORA dan LISTENER.ORA pada Centos
+	- $ORACLE_HOME/dbhome_1/network/admin
+	
+	misalnya :
+
+	- /home/oracle/app/product/11.2.0/dbhome_1/network/admin
+
+
+Catatan: Kadang setiap server berbeda path ORACLE-HOME nya

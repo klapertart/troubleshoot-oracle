@@ -1,0 +1,14 @@
+Mengaktifkan seluruh Trigger pada Database
+
+1. Buka Navicate, Buka database PBB
+
+2. Pada menu 'Others' pilih Trigger
+
+3. Setelah semua trigger muncul, 
+pilih trigger-triger yang pada icon-nya tidak terdapat tanda seru (tidak invalid) dan di kolom 'Enable'-nya masih tertulis 'disable'
+
+4. Klik kanan pada trigger-nya, pilih 'Maintain', lalu pilih 'Enable'.
+
+*lakukan pada seluruh triger yang masih disable, dan pada icon-nya tidak terdapat tanda seru*
+
+--------------------- Selesai --------------------

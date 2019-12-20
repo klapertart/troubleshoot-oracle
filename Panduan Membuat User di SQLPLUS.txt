@@ -1,0 +1,8 @@
+Create User di SQLPLUS
+
+*contoh buat user u060000000 dengan password sismiop
+
+1. Login ke sqlplus dengan user pbb , password pbb, hoststring sismiop
+2. Buat user u060000000 >> create user u060000000 identified by sismiop;
+3. Beri grant dba >> grant dba to u060000000
+4. Beri grant pemakai aktif >> grant pemakai_aktif to u060000000

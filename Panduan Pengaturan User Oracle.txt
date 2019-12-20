@@ -1,0 +1,30 @@
+1). LOCK & UNLOCK USER
+
+Script untuk LOCK sebuah USER Oracle
+
+>> ALTER USER [username] ACCOUNT LOCK; [enter]
+
+Script untuk UNLOCK sebuah USER Oracle
+
+>> ALTER USER [username] ACCOUNT UNLOCK; [enter]
+
+
+
+2). EXPIRE USER
+
+Script untuk membuat sebuah password user untuk EXPIRE di Oracle
+
+>> ALTER USER [username] PASSWORD EXPIRE; [enter]
+
+Script untuk mengganti password sebuah user karena sudah EXPIRE (atau sekedar ingin merubah password saja) di Oracle
+
+>> ALTER USER [username] IDENTIFIED BY [new password]; [enter]
+
+
+3). UNLIMITED
+>> alter profile DEFAULT limit PASSWORD_LIFE_TIME  unlimited;
+
+
+
+NB: 
+Script diatas dijalankan di SQLPlus.

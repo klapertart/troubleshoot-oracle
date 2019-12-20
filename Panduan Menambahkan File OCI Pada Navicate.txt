@@ -1,0 +1,18 @@
+Panduan Menambahkan file oci.dll pada Navicate
+
+1. Buka Navicate
+
+2. Buka window Options (Tools > Options)
+
+3. Disamping kiri, pilih Miscellaneous > OCI
+
+4. Pada field OCI library (oci.dll) pilih file dengan klik tombol (...)
+
+5. Letak file oci.dll > C:\Program Files\PremiumSoft\Navicat Premium\instantclient_10_2\oci.dll
+
+6. Ketika sudah ditambahkan, klik tombol OK
+
+7. Tutup aplikasi Navicate
+
+
+----------------- Selesai -------------------

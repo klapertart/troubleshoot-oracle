@@ -1,0 +1,36 @@
+langkah-langkah :
+
+1. login / as sysdba -> harus menggunakan sysdba
+
+2. cek status menggunakan "select status, database_status from v$instance;" ( status = started database_status = active)
+
+3.cek mode database menggunakan "select open_mode from v$database;"
+   jika gagal pesan ORA-01507: database not mounted
+   
+   a. alter database mount;
+   b. cek kembali dengan menggunakan perintah no 2 dan 3 
+
+
+tambahan penting :
+
+jika saat menggunakan perintah alter database open terjadi error:
+
+1. gunakan startup mount; jika error 
+   
+   ORA-01081: cannot start already-running ORACLE - shut it down first
+   
+   a. gunakan shutdown abort;
+   b. startup mount;
+
+2. gunakan recover database using backup control until cancel;
+   lalu ketik /home/app/oradata/sismiop/redo03.log enter
+   jika error
+   
+    ORA-01547: warning: RECOVER succeeded but OPEN RESETLOGS would get error below
+      
+   a.gunakan recover database using backup control until cancel;
+     lalu ketik /home/app/oradata/sismiop/redo01.log enter 
+   jika terdapat pesan seperti Media recovery complete
+      a. alter database open resetlogs;
+   
+      selesai
