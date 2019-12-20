@@ -1,0 +1,13 @@
+Tahapan menghapus tablespace Users
+
+1. Buat tablespace temporary
+
+SQL> CREATE TABLESPACE USERS_TEMP DATAFILE '/u01/app/oracle/oradata/orcl/users_temp_01.dbf' size 10M AUTOEXTEND ON;
+
+2. Alter sehingga temporary tersebut jadi default tablespace 
+
+SQL>alter database default tablespace USERS_TEMP;
+
+3. Sekarang, baru bisa delete tablespace users
+
+SQL>DROP TABLESPACE USERS INCLUDING CONTENTS AND DATAFILES;
