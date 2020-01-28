@@ -1,0 +1,2 @@
+select file_name, file_id, tablespace_name, status,online_status 
+from dba_data_files order by tablespace_name;
