@@ -11,3 +11,12 @@ SQL>alter database default tablespace USERS_TEMP;
 3. Sekarang, baru bisa delete tablespace users
 
 SQL>DROP TABLESPACE USERS INCLUDING CONTENTS AND DATAFILES;
+
+
+4. Jika akan menghapus file datafile, lakukan dulu script berikut :
+
+SQL > alter database datafile '/home/oracle/app/oradata/sismiop/users2.dbf' offline drop;
+
+Script diatas juga bisa dilakukan jika Database not open kemudian muncul :
+ORA-01115: IO error reading block from file 6 (block # 1)
+ORA-01110: data file 6: '/home/oracle/app/oradata/sismiop/users2.dbf'
